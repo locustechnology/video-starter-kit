@@ -3,9 +3,13 @@ import { Button } from "@/components/ui/button";
 import { fetchSharedVideo } from "@/lib/share";
 import { DownloadIcon } from "lucide-react";
 import type { Metadata, ResolvingMetadata } from "next";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type PageParams = {
+  locale: string;
   id: string;
 };
 
@@ -17,10 +21,14 @@ export async function generateMetadata(
   { params }: PageProps,
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "share.metadata",
+  });
   const video = await fetchSharedVideo(params.id);
   if (!video) {
     return {
-      title: "Video Not Found",
+      title: t("notFoundTitle"),
     };
   }
 
@@ -28,9 +36,8 @@ export async function generateMetadata(
 
   return {
     title: video.title,
-    description: video.description || "Watch on Video AI Studio",
+    description: video.description || t("watchDescription"),
 
-    // Open Graph metadata
     openGraph: {
       title: video.title,
       description: video.description,
@@ -54,7 +61,6 @@ export async function generateMetadata(
       ],
     },
 
-    // Twitter Card metadata
     twitter: {
       card: "player",
       title: video.title,
@@ -70,9 +76,7 @@ export async function generateMetadata(
       images: [video.thumbnailUrl],
     },
 
-    // Additional metadata
     other: {
-      // TODO resolve duration
       "og:video:duration": "15",
       "video:duration": "15",
       "video:release_date": new Date(video.createdAt).toISOString(),
@@ -81,6 +85,10 @@ export async function generateMetadata(
 }
 
 export default async function SharePage({ params }: PageProps) {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "share",
+  });
   const shareId = params.id;
   const shareData = await fetchSharedVideo(shareId);
   if (!shareData) {
@@ -103,17 +111,19 @@ export default async function SharePage({ params }: PageProps) {
                 poster={shareData.thumbnailUrl}
                 controls
                 className="w-full h-full aspect-video"
-              />
+              >
+                <track kind="captions" />
+              </video>
             </div>
             <div className="flex flex-row gap-2 items-center justify-center">
               <Button variant="secondary" asChild size="lg">
                 <a href={shareData.videoUrl} download>
                   <DownloadIcon className="w-4 h-4 opacity-50" />
-                  Download
+                  {t("download")}
                 </a>
               </Button>
               <Button variant="secondary" size="lg" asChild>
-                <a href="/">Start your project</a>
+                <Link href="/">{t("startProject")}</Link>
               </Button>
             </div>
           </div>
