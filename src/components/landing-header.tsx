@@ -26,8 +26,8 @@ export default function Header() {
             Clips.ai
           </span>
         </Link>
-
-        {/* Desktop nav */}https://github.com/fal-ai-community/video-starterhttps://github.https://github.https://github.https://github.com/fal-ai-community/video-starter-kit.gitcom/fal-ai-community/video-starter-kit.gitcom/fal-ai-community/video-starter-kit.gitcom/fal-ai-community/video-starter-kit.git-kit.git
+        {/* Desktop nav */}
+        https://github.com/fal-ai-community/video-starterhttps://github.https://github.https://github.https://github.com/fal-ai-community/video-starter-kit.gitcom/fal-ai-community/video-starter-kit.gitcom/fal-ai-community/video-starter-kit.gitcom/fal-ai-community/video-starter-kit.git-kit.git
         <nav className="hidden md:flex items-center gap-8">
           <Link
             href="#features"
@@ -50,7 +50,6 @@ export default function Header() {
             GoStudio.ai
           </Link>
         </nav>
-
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
           <Link href="https://gostudio.ai/login" target="_blank">
@@ -67,29 +66,54 @@ export default function Header() {
             </Button>
           </Link>
         </div>
-
         {/* Mobile hamburger */}
         <button
           className="md:hidden text-gray-500 hover:text-gray-900"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {mobileOpen ? (
+            <X className="w-5 h-5" />
+          ) : (
+            <Menu className="w-5 h-5" />
+          )}
         </button>
       </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-white border-t border-gray-200 px-6 py-4 flex flex-col gap-4">
-          <Link href="#features" className="text-sm text-gray-600 hover:text-gray-900 font-medium" onClick={() => setMobileOpen(false)}>Features</Link>
-          <Link href="#how-it-works" className="text-sm text-gray-600 hover:text-gray-900 font-medium" onClick={() => setMobileOpen(false)}>How it works</Link>
-          <Link href="https://gostudio.ai" target="_blank" className="text-sm text-gray-600 hover:text-gray-900 font-medium">GoStudio.ai</Link>
+          <Link
+            href="#features"
+            className="text-sm text-gray-600 hover:text-gray-900 font-medium"
+            onClick={() => setMobileOpen(false)}
+          >
+            Features
+          </Link>
+          <Link
+            href="#how-it-works"
+            className="text-sm text-gray-600 hover:text-gray-900 font-medium"
+            onClick={() => setMobileOpen(false)}
+          >
+            How it works
+          </Link>
+          <Link
+            href="https://gostudio.ai"
+            target="_blank"
+            className="text-sm text-gray-600 hover:text-gray-900 font-medium"
+          >
+            GoStudio.ai
+          </Link>
           <div className="flex flex-col gap-2 pt-2 border-t border-gray-200">
             <Link href="https://gostudio.ai/login" target="_blank">
-              <Button variant="outline" className="w-full text-sm">Log in</Button>
+              <Button variant="outline" className="w-full text-sm">
+                Log in
+              </Button>
             </Link>
             <Link href="/app">
-              <Button className="w-full bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold rounded-full">Try it free</Button>
+              <Button className="w-full bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold rounded-full">
+                Try it free
+              </Button>
             </Link>
           </div>
         </div>

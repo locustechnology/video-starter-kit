@@ -124,16 +124,28 @@ export default function Footer() {
                 Follow us
                 <div className="flex gap-3">
                   <a href="#" className="text-violet-600 hover:text-violet-800">
-                    <Facebook className="w-[18px] h-[18px]" fill="currentColor" strokeWidth={0} />
+                    <Facebook
+                      className="w-[18px] h-[18px]"
+                      fill="currentColor"
+                      strokeWidth={0}
+                    />
                   </a>
                   <a href="#" className="text-violet-600 hover:text-violet-800">
                     <Instagram className="w-[18px] h-[18px]" />
                   </a>
                   <a href="#" className="text-violet-600 hover:text-violet-800">
-                    <Twitter className="w-[18px] h-[18px]" fill="currentColor" strokeWidth={0} />
+                    <Twitter
+                      className="w-[18px] h-[18px]"
+                      fill="currentColor"
+                      strokeWidth={0}
+                    />
                   </a>
                   <a href="#" className="text-violet-600 hover:text-violet-800">
-                    <Linkedin className="w-[18px] h-[18px]" fill="currentColor" strokeWidth={0} />
+                    <Linkedin
+                      className="w-[18px] h-[18px]"
+                      fill="currentColor"
+                      strokeWidth={0}
+                    />
                   </a>
                 </div>
               </h4>
@@ -145,23 +157,65 @@ export default function Footer() {
               </h4>
               <div className="flex gap-3">
                 <span className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center cursor-pointer hover:border-violet-300 hover:bg-violet-50 transition-colors">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-700">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-gray-700"
+                  >
                     <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                   </svg>
                 </span>
                 <span className="w-10 h-10 rounded-full border border-violet-200 bg-violet-50 flex items-center justify-center cursor-pointer">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-violet-600">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-violet-600"
+                  >
                     <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
                   </svg>
                 </span>
                 <span className="w-10 h-10 rounded-full border border-teal-200 bg-teal-50 flex items-center justify-center cursor-pointer">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-600">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-teal-600"
+                  >
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </span>
                 <span className="w-10 h-10 rounded-full border border-orange-200 bg-orange-50 flex items-center justify-center cursor-pointer">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-orange-500">
-                    <circle cx="12" cy="12" r="10" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /><path d="M2 12h20" />
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-orange-500"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    <path d="M2 12h20" />
                   </svg>
                 </span>
               </div>
@@ -191,7 +245,8 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[13px] font-bold text-gray-900">
-            Copyright © {new Date().getFullYear()} All rights reserved. GoStudio.ai
+            Copyright © {new Date().getFullYear()} All rights reserved.
+            GoStudio.ai
           </p>
           <div className="flex items-center gap-4 text-[13px]">
             <span className="text-gray-500 hover:text-gray-900 cursor-pointer">
@@ -199,7 +254,16 @@ export default function Footer() {
             </span>
             <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium px-4 py-1.5 rounded-full flex items-center gap-2 transition-colors">
               English
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <path d="m6 9 6 6 6-6" />
               </svg>
             </button>

@@ -89,7 +89,10 @@ export default function Features() {
   return (
     <>
       {/* Features Grid */}
-      <section id="features" className="py-24 bg-gray-50 border-t border-gray-100">
+      <section
+        id="features"
+        className="py-24 bg-gray-50 border-t border-gray-100"
+      >
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <p className="text-violet-600 font-semibold text-sm uppercase tracking-widest mb-3">
@@ -107,10 +110,10 @@ export default function Features() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((feature, index) => (
               <Link href="/app" key={index}>
-                <div
-                  className="group h-full p-6 rounded-2xl border border-gray-200 bg-white hover:border-violet-200 hover:shadow-lg hover:shadow-violet-50 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-                >
-                  <div className={`w-10 h-10 ${feature.iconBg} rounded-xl flex items-center justify-center mb-4`}>
+                <div className="group h-full p-6 rounded-2xl border border-gray-200 bg-white hover:border-violet-200 hover:shadow-lg hover:shadow-violet-50 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                  <div
+                    className={`w-10 h-10 ${feature.iconBg} rounded-xl flex items-center justify-center mb-4`}
+                  >
                     <feature.icon className={`w-5 h-5 ${feature.iconColor}`} />
                   </div>
                   <h3 className="text-base font-semibold mb-2 text-gray-900 group-hover:text-violet-700 transition-colors">
@@ -127,7 +130,10 @@ export default function Features() {
       </section>
 
       {/* How it works */}
-      <section id="how-it-works" className="py-24 bg-white border-t border-gray-100">
+      <section
+        id="how-it-works"
+        className="py-24 bg-white border-t border-gray-100"
+      >
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <p className="text-violet-600 font-semibold text-sm uppercase tracking-widest mb-3">
