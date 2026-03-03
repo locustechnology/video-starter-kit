@@ -533,6 +533,7 @@ function ModelEndpointPicker({
     <div className="flex flex-col gap-2">
       <Popover open={open} onOpenChange={setOpen} modal>
         <PopoverTrigger asChild>
+          {/* biome-ignore lint/a11y/useSemanticElements: shadcn combobox pattern */}
           <Button
             variant="outline"
             role="combobox"

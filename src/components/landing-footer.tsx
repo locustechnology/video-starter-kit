@@ -1,13 +1,13 @@
-import Link from "next/link";
-import Image from "next/image";
 import {
-  Facebook,
-  Instagram,
-  Twitter,
-  Linkedin,
   ArrowRight,
+  Facebook,
   HelpCircle,
+  Instagram,
+  Linkedin,
+  Twitter,
 } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const footerLinks = [
   {
@@ -84,15 +84,15 @@ export default function Footer() {
           {/* 5 Columns of Links */}
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 xl:w-3/4">
             {footerLinks.map((column, i) => (
-              <div key={i}>
+              <div key={column.title}>
                 <h4 className="text-gray-900 font-bold text-[15px] mb-6">
                   {column.title}
                 </h4>
                 <ul className="space-y-4">
                   {column.links.map((link, j) => (
-                    <li key={j}>
+                    <li key={link}>
                       <Link
-                        href="#"
+                        href="/"
                         className="text-[14px] text-gray-500 hover:text-violet-600 transition-colors"
                       >
                         {link}
@@ -123,24 +123,24 @@ export default function Footer() {
               <h4 className="text-gray-900 font-medium text-[15px] mb-4 flex items-center gap-4">
                 Follow us
                 <div className="flex gap-3">
-                  <a href="#" className="text-violet-600 hover:text-violet-800">
+                  <a href="/" className="text-violet-600 hover:text-violet-800">
                     <Facebook
                       className="w-[18px] h-[18px]"
                       fill="currentColor"
                       strokeWidth={0}
                     />
                   </a>
-                  <a href="#" className="text-violet-600 hover:text-violet-800">
+                  <a href="/" className="text-violet-600 hover:text-violet-800">
                     <Instagram className="w-[18px] h-[18px]" />
                   </a>
-                  <a href="#" className="text-violet-600 hover:text-violet-800">
+                  <a href="/" className="text-violet-600 hover:text-violet-800">
                     <Twitter
                       className="w-[18px] h-[18px]"
                       fill="currentColor"
                       strokeWidth={0}
                     />
                   </a>
-                  <a href="#" className="text-violet-600 hover:text-violet-800">
+                  <a href="/" className="text-violet-600 hover:text-violet-800">
                     <Linkedin
                       className="w-[18px] h-[18px]"
                       fill="currentColor"
@@ -168,6 +168,7 @@ export default function Footer() {
                     strokeLinejoin="round"
                     className="text-gray-700"
                   >
+                    <title>AI Provider 1</title>
                     <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                   </svg>
                 </span>
@@ -183,6 +184,7 @@ export default function Footer() {
                     strokeLinejoin="round"
                     className="text-violet-600"
                   >
+                    <title>AI Provider 2</title>
                     <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
                   </svg>
                 </span>
@@ -198,6 +200,7 @@ export default function Footer() {
                     strokeLinejoin="round"
                     className="text-teal-600"
                   >
+                    <title>AI Provider 3</title>
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </span>
@@ -213,6 +216,7 @@ export default function Footer() {
                     strokeLinejoin="round"
                     className="text-orange-500"
                   >
+                    <title>AI Provider 4</title>
                     <circle cx="12" cy="12" r="10" />
                     <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                     <path d="M2 12h20" />
@@ -222,7 +226,7 @@ export default function Footer() {
             </div>
 
             <a
-              href="#"
+              href="/"
               className="w-full relative overflow-hidden group rounded-xl bg-gradient-to-r from-violet-500 to-cyan-400 p-px shadow-md"
             >
               <div className="bg-gradient-to-r from-violet-500 to-cyan-400 w-full h-full px-5 py-4 rounded-[11px] flex items-center justify-between">
@@ -252,7 +256,10 @@ export default function Footer() {
             <span className="text-gray-500 hover:text-gray-900 cursor-pointer">
               Need Help?
             </span>
-            <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium px-4 py-1.5 rounded-full flex items-center gap-2 transition-colors">
+            <button
+              type="button"
+              className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium px-4 py-1.5 rounded-full flex items-center gap-2 transition-colors"
+            >
               English
               <svg
                 width="12"
@@ -264,6 +271,7 @@ export default function Footer() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
+                <title>Chevron down</title>
                 <path d="m6 9 6 6 6-6" />
               </svg>
             </button>

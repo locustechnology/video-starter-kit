@@ -1,10 +1,10 @@
 import {
-  Wand2,
-  Music,
-  Mic,
-  Share2,
-  Layers,
   ImageIcon,
+  Layers,
+  Mic,
+  Music,
+  Share2,
+  Wand2,
   Zap,
 } from "lucide-react";
 import Link from "next/link";
@@ -109,7 +109,7 @@ export default function Features() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((feature, index) => (
-              <Link href="/en/app" key={index}>
+              <Link href="/en/app" key={feature.title}>
                 <div className="group h-full p-6 rounded-2xl border border-gray-200 bg-white hover:border-violet-200 hover:shadow-lg hover:shadow-violet-50 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
                   <div
                     className={`w-10 h-10 ${feature.iconBg} rounded-xl flex items-center justify-center mb-4`}
@@ -149,7 +149,7 @@ export default function Features() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((step, index) => (
-              <div key={index} className="relative">
+              <div key={step.title} className="relative">
                 {index < steps.length - 1 && (
                   <div className="hidden lg:block absolute top-8 left-full w-full h-px bg-gradient-to-r from-violet-200 to-transparent z-0" />
                 )}
@@ -188,7 +188,10 @@ export default function Features() {
                 GoStudio Clips to produce breathtaking AI-powered videos.
               </p>
               <Link href="/en/app">
-                <button className="bg-violet-600 hover:bg-violet-700 text-white font-semibold px-8 py-4 rounded-full text-base shadow-md shadow-violet-200 transition-all duration-300 hover:-translate-y-1">
+                <button
+                  type="button"
+                  className="bg-violet-600 hover:bg-violet-700 text-white font-semibold px-8 py-4 rounded-full text-base shadow-md shadow-violet-200 transition-all duration-300 hover:-translate-y-1"
+                >
                   Start creating for free
                 </button>
               </Link>

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Zap } from "lucide-react";
 import { LaptopMockup } from "@/components/ui/landing-laptop-mockup";
+import { ArrowRight, Sparkles, Zap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 

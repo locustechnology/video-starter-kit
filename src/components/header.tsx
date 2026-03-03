@@ -1,12 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Logo } from "./logo";
-import { SettingsIcon, ExternalLinkIcon, Globe } from "lucide-react";
+import { ExternalLinkIcon, Globe, SettingsIcon } from "lucide-react";
 import { useLocale } from "next-intl";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { LanguageSwitcher } from "./language-switcher";
+import { Logo } from "./logo";
 
 export default function Header({
   openKeyDialog,
