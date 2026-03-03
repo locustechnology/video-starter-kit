@@ -67,6 +67,7 @@ export default function Header() {
         </div>
         {/* Mobile hamburger */}
         <button
+          type="button"
           className="md:hidden text-gray-500 hover:text-gray-900"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
