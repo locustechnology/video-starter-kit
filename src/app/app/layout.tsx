@@ -3,8 +3,8 @@ import { Analytics } from "@vercel/analytics/react";
 import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "AI Video Developer Starter Kit | fal.ai",
-  description: "Open-source AI video editor built for developers.",
+  title: "GoStudio Clips — AI Video Creator",
+  description: "Create stunning AI-powered videos in seconds — by GoStudio.ai.",
 };
 
 export default function RootLayout({
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased dark">
+      <body className="antialiased">
         {children}
         <Analytics />
       </body>
