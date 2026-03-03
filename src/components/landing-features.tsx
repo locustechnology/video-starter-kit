@@ -109,7 +109,7 @@ export default function Features() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((feature, index) => (
-              <Link href="/app" key={index}>
+              <Link href="/en/app" key={index}>
                 <div className="group h-full p-6 rounded-2xl border border-gray-200 bg-white hover:border-violet-200 hover:shadow-lg hover:shadow-violet-50 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
                   <div
                     className={`w-10 h-10 ${feature.iconBg} rounded-xl flex items-center justify-center mb-4`}
@@ -187,7 +187,7 @@ export default function Features() {
                 Join thousands of creators, agencies, and brands who already use
                 GoStudio Clips to produce breathtaking AI-powered videos.
               </p>
-              <Link href="/app">
+              <Link href="/en/app">
                 <button className="bg-violet-600 hover:bg-violet-700 text-white font-semibold px-8 py-4 rounded-full text-base shadow-md shadow-violet-200 transition-all duration-300 hover:-translate-y-1">
                   Start creating for free
                 </button>

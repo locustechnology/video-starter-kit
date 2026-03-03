@@ -50,7 +50,7 @@ export default function Hero() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-          <Link href="/app">
+          <Link href="/en/app">
             <Button
               size="lg"
               className="bg-violet-600 hover:bg-violet-700 text-white font-semibold px-8 rounded-full text-base min-w-[200px] shadow-lg shadow-violet-200 hover:shadow-violet-300 transition-all duration-300"

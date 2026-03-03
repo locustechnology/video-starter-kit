@@ -27,7 +27,6 @@ export default function Header() {
           </span>
         </Link>
         {/* Desktop nav */}
-        https://github.com/fal-ai-community/video-starterhttps://github.https://github.https://github.https://github.com/fal-ai-community/video-starter-kit.gitcom/fal-ai-community/video-starter-kit.gitcom/fal-ai-community/video-starter-kit.gitcom/fal-ai-community/video-starter-kit.git-kit.git
         <nav className="hidden md:flex items-center gap-8">
           <Link
             href="#features"
@@ -60,7 +59,7 @@ export default function Header() {
               Log in
             </Button>
           </Link>
-          <Link href="/app">
+          <Link href="/en/app">
             <Button className="bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold px-5 rounded-full transition-all duration-200 shadow-md hover:shadow-violet-200">
               Try it free
             </Button>
@@ -110,7 +109,7 @@ export default function Header() {
                 Log in
               </Button>
             </Link>
-            <Link href="/app">
+            <Link href="/en/app">
               <Button className="w-full bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold rounded-full">
                 Try it free
               </Button>

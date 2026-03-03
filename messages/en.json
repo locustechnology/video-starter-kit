@@ -2,18 +2,21 @@
   "landing": {
     "header": {
       "features": "Features",
-      "community": "Community",
-      "github": "GitHub",
-      "tryNow": "Try it now"
+      "howItWorks": "How it works",
+      "goStudio": "GoStudio.ai",
+      "login": "Log in",
+      "tryFree": "Try it free"
     },
     "hero": {
-      "badge": "Now Open Source",
-      "starGithub": "Star on GitHub",
-      "title": "VideoSOS",
-      "subtitle": "AI Video Editor",
-      "description": "A powerful, open-source AI video editor built for creators. Create stunning videos with our intuitive tools and 100+ AI models.",
-      "tryNow": "Try it now",
-      "imageAlt": "VideoSOS interface"
+      "badge": "AI Video by GoStudio.ai",
+      "learnMore": "Learn more",
+      "title1": "Create stunning",
+      "titleHighlight": "AI videos",
+      "title2": "in seconds",
+      "description": "GoStudio Clips harnesses the latest AI video models to turn your ideas into professional-quality video content — no editing skills required.",
+      "startCreating": "Start creating free",
+      "seeHow": "See how it works",
+      "imageAlt": "GoStudio Clips — AI Video Editor"
     },
     "features": {
       "title": "Powerful features for modern creators",
@@ -53,21 +56,21 @@
     },
     "community": {
       "title": "Join our community",
-      "description": "VideoSOS is an open-source project. Star us on GitHub and contribute to help shape the future of AI-powered video editing.",
-      "starGithub": "Star on GitHub"
+      "description": "GoStudio Clips is built for creators. Join our community and help shape the future of AI-powered video creation.",
+      "visitSite": "Visit GoStudio.ai"
     },
     "footer": {
-      "appName": "VideoSOS",
-      "tagline": "Open-source AI video editor built for creators.",
-      "credits": "Credits",
-      "community": "Community",
-      "github": "GitHub"
+      "appName": "Clips.ai",
+      "tagline": "AI-powered video creation by GoStudio.ai",
+      "product": "Product",
+      "goStudio": "GoStudio.ai",
+      "legal": "Legal"
     }
   },
   "app": {
     "metadata": {
-      "title": "VideoSOS | AI Video Editor",
-      "description": "Open-source AI video editor that runs entirely in your browser."
+      "title": "GoStudio Clips — AI Video Creator",
+      "description": "Create stunning AI-powered videos in seconds — by GoStudio.ai."
     },
     "header": {
       "github": "GitHub"

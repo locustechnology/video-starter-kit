@@ -7,7 +7,7 @@ import {
   type VideoTrack,
 } from "./schema";
 
-const dbPromise = openDB("ai-vstudio-db-v2", 1, {
+const dbPromise = typeof indexedDB !== "undefined" ? openDB("ai-vstudio-db-v2", 1, {
   upgrade(db) {
     db.createObjectStore("projects", { keyPath: "id" });
 
@@ -35,10 +35,10 @@ const dbPromise = openDB("ai-vstudio-db-v2", 1, {
   terminated() {
     console.error("[IndexedDB] Database connection terminated unexpectedly");
   },
-});
+}) : null;
 
 function open() {
-  return dbPromise;
+  return dbPromise!;
 }
 
 export const db = {
