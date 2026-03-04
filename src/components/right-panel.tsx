@@ -1160,7 +1160,10 @@ export default function RightPanel({
     input.reference_audio_url = normalizedReferenceAudio;
   }
 
-  if (generateData.advanced_camera_control) {
+  if (
+    generateData.advanced_camera_control &&
+    generateData.advanced_camera_control.movement_value !== 0
+  ) {
     input.advanced_camera_control = generateData.advanced_camera_control;
   }
 

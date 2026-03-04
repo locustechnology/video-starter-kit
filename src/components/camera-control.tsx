@@ -42,16 +42,22 @@ const CameraMovement = ({
 
   const handleChange = (type: "movement" | "value", val: string | number) => {
     if (type === "movement") {
-      setMovement(val as string);
+      const newMovement = val as string;
+      setMovement(newMovement);
       setValue(0);
-      if (movement === "default") {
-        setValue(0);
+      if (newMovement === "default") {
         onChange(undefined);
+      } else {
+        onChange({ movement: newMovement, value: 0 });
       }
-      onChange({ movement: val as string, value: value });
     } else {
-      setValue(val as number);
-      onChange({ movement: movement, value: val as number });
+      const newValue = val as number;
+      setValue(newValue);
+      if (movement === "default" || newValue === 0) {
+        onChange(undefined);
+      } else {
+        onChange({ movement: movement, value: newValue });
+      }
     }
   };
 
