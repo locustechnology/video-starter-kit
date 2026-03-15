@@ -57,6 +57,7 @@
     "react-hook-form": "^7.54.0",
     "react-hotkeys-hook": "^4.6.1",
     "remotion": "4.0.249",
+    "resend": "^6.9.3",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "throttle-debounce": "^5.0.2",

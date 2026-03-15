@@ -533,10 +533,8 @@ function ModelEndpointPicker({
     <div className="flex flex-col gap-2">
       <Popover open={open} onOpenChange={setOpen} modal>
         <PopoverTrigger asChild>
-          {/* biome-ignore lint/a11y/useSemanticElements: shadcn combobox pattern */}
           <Button
             variant="outline"
-            role="combobox"
             aria-expanded={open}
             className="w-full justify-between h-auto py-2.5 px-3"
           >
@@ -1182,13 +1180,21 @@ export default function RightPanel({
           remove_silence: true,
         }
       : {};
+  // Only swap text-to-video → image-to-video if the target endpoint actually exists
+  const imageToVideoEndpointId = endpointId.includes("/text-to-video")
+    ? endpointId.replace("/text-to-video", "/image-to-video")
+    : `${endpointId}/image-to-video`;
+  const imageToVideoExists = allEndpoints.some(
+    (e) => e.endpointId === imageToVideoEndpointId,
+  );
   const createJob = useJobCreator({
     projectId,
     endpointId:
       generateData.image &&
       mediaType === "video" &&
-      !endpointId.endsWith("/image-to-video")
-        ? `${endpointId}/image-to-video`
+      !endpointId.endsWith("/image-to-video") &&
+      imageToVideoExists
+        ? imageToVideoEndpointId
         : endpointId,
     mediaType,
     input: {
