@@ -568,18 +568,18 @@ function ModelEndpointPicker({
             {(providerFilter !== "all" ||
               typeFilter !== "all" ||
               modelTypeFilter !== "all") && (
-                <div className="flex items-center justify-end px-2 pt-2">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-6 text-xs"
-                    onClick={resetFilters}
-                  >
-                    <XIcon className="h-3 w-3 mr-1" />
-                    Reset filters
-                  </Button>
-                </div>
-              )}
+              <div className="flex items-center justify-end px-2 pt-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-6 text-xs"
+                  onClick={resetFilters}
+                >
+                  <XIcon className="h-3 w-3 mr-1" />
+                  Reset filters
+                </Button>
+              </div>
+            )}
 
             {/* Provider filter buttons inside dropdown */}
             <div className="flex items-center gap-1 px-2 py-2 border-b">
@@ -1172,13 +1172,13 @@ export default function RightPanel({
   const extraInput =
     endpointId === "fal-ai/f5-tts"
       ? {
-        gen_text: generateData.prompt,
-        ref_audio_url:
-          "https://github.com/SWivid/F5-TTS/raw/21900ba97d5020a5a70bcc9a0575dc7dec5021cb/tests/ref_audio/test_en_1_ref_short.wav",
-        ref_text: "Some call me nature, others call me mother nature.",
-        model_type: "F5-TTS",
-        remove_silence: true,
-      }
+          gen_text: generateData.prompt,
+          ref_audio_url:
+            "https://github.com/SWivid/F5-TTS/raw/21900ba97d5020a5a70bcc9a0575dc7dec5021cb/tests/ref_audio/test_en_1_ref_short.wav",
+          ref_text: "Some call me nature, others call me mother nature.",
+          model_type: "F5-TTS",
+          remove_silence: true,
+        }
       : {};
   // Only swap text-to-video → image-to-video if the target endpoint actually exists
   const imageToVideoEndpointId = endpointId.includes("/text-to-video")
@@ -1191,9 +1191,9 @@ export default function RightPanel({
     projectId,
     endpointId:
       generateData.image &&
-        mediaType === "video" &&
-        !endpointId.endsWith("/image-to-video") &&
-        imageToVideoExists
+      mediaType === "video" &&
+      !endpointId.endsWith("/image-to-video") &&
+      imageToVideoExists
         ? imageToVideoEndpointId
         : endpointId,
     mediaType,
@@ -2003,9 +2003,9 @@ export default function RightPanel({
                   setGenerateData({
                     advanced_camera_control: val
                       ? {
-                        movement_value: val.value,
-                        movement_type: val.movement,
-                      }
+                          movement_value: val.value,
+                          movement_type: val.movement,
+                        }
                       : undefined,
                   })
                 }
@@ -2102,7 +2102,7 @@ export default function RightPanel({
                             </div>
                           )}
                         {endpoint?.availableDimensions &&
-                          endpoint.availableDimensions.length > 0 ? (
+                        endpoint.availableDimensions.length > 0 ? (
                           <div className="flex flex-col gap-2">
                             <Label className="text-xs">Size</Label>
                             <Select
@@ -2180,54 +2180,54 @@ export default function RightPanel({
                               endpoint?.maxSteps !== undefined ||
                               endpoint?.defaultSteps !== undefined ||
                               endpoint?.availableSteps !== undefined) && (
-                                <div className="flex flex-col gap-2">
-                                  <Label className="text-xs">Steps</Label>
-                                  <Input
-                                    className="h-8 text-xs"
-                                    type="number"
-                                    min={endpoint?.minSteps || 1}
-                                    max={endpoint?.maxSteps || 100}
-                                    step={1}
-                                    value={
-                                      generateData.steps ||
-                                      endpoint?.defaultSteps ||
-                                      28
-                                    }
-                                    onChange={(e) =>
-                                      setGenerateData({
-                                        steps: Number.parseInt(e.target.value),
-                                      })
-                                    }
-                                  />
-                                </div>
-                              )}
+                              <div className="flex flex-col gap-2">
+                                <Label className="text-xs">Steps</Label>
+                                <Input
+                                  className="h-8 text-xs"
+                                  type="number"
+                                  min={endpoint?.minSteps || 1}
+                                  max={endpoint?.maxSteps || 100}
+                                  step={1}
+                                  value={
+                                    generateData.steps ||
+                                    endpoint?.defaultSteps ||
+                                    28
+                                  }
+                                  onChange={(e) =>
+                                    setGenerateData({
+                                      steps: Number.parseInt(e.target.value),
+                                    })
+                                  }
+                                />
+                              </div>
+                            )}
                             {/* Show CFG Scale only if model has guidance parameters */}
                             {(endpoint?.minGuidanceScale !== undefined ||
                               endpoint?.maxGuidanceScale !== undefined ||
                               endpoint?.defaultGuidanceScale !== undefined) && (
-                                <div className="flex flex-col gap-2">
-                                  <Label className="text-xs">CFG Scale</Label>
-                                  <Input
-                                    className="h-8 text-xs"
-                                    type="number"
-                                    min={endpoint?.minGuidanceScale || 1}
-                                    max={endpoint?.maxGuidanceScale || 20}
-                                    step={0.5}
-                                    value={
-                                      generateData.CFGScale ||
-                                      endpoint?.defaultGuidanceScale ||
-                                      3.5
-                                    }
-                                    onChange={(e) =>
-                                      setGenerateData({
-                                        CFGScale: Number.parseFloat(
-                                          e.target.value,
-                                        ),
-                                      })
-                                    }
-                                  />
-                                </div>
-                              )}
+                              <div className="flex flex-col gap-2">
+                                <Label className="text-xs">CFG Scale</Label>
+                                <Input
+                                  className="h-8 text-xs"
+                                  type="number"
+                                  min={endpoint?.minGuidanceScale || 1}
+                                  max={endpoint?.maxGuidanceScale || 20}
+                                  step={0.5}
+                                  value={
+                                    generateData.CFGScale ||
+                                    endpoint?.defaultGuidanceScale ||
+                                    3.5
+                                  }
+                                  onChange={(e) =>
+                                    setGenerateData({
+                                      CFGScale: Number.parseFloat(
+                                        e.target.value,
+                                      ),
+                                    })
+                                  }
+                                />
+                              </div>
+                            )}
                             {/* Show Seed only if model has seed parameter */}
                             {endpoint?.hasSeed && (
                               <div className="flex flex-col gap-2">
@@ -2254,117 +2254,117 @@ export default function RightPanel({
                             {/* Show Duration only if model has duration parameters */}
                             {(endpoint?.availableDurations ||
                               endpoint?.defaultDuration !== undefined) && (
-                                <div className="flex flex-col gap-2">
-                                  <Label className="text-xs">
-                                    Duration (seconds)
-                                  </Label>
-                                  {endpoint?.availableDurations &&
-                                    endpoint.availableDurations.length > 0 ? (
-                                    <Select
-                                      value={String(
-                                        generateData.duration ||
+                              <div className="flex flex-col gap-2">
+                                <Label className="text-xs">
+                                  Duration (seconds)
+                                </Label>
+                                {endpoint?.availableDurations &&
+                                endpoint.availableDurations.length > 0 ? (
+                                  <Select
+                                    value={String(
+                                      generateData.duration ||
                                         endpoint.defaultDuration ||
                                         endpoint.availableDurations[0],
+                                    )}
+                                    onValueChange={(value) =>
+                                      setGenerateData({
+                                        duration: Number.parseInt(value),
+                                      })
+                                    }
+                                  >
+                                    <SelectTrigger className="h-8 text-xs">
+                                      <SelectValue />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                      {endpoint.availableDurations.map(
+                                        (dur) => (
+                                          <SelectItem
+                                            key={dur}
+                                            value={String(dur)}
+                                          >
+                                            {dur}s
+                                          </SelectItem>
+                                        ),
                                       )}
-                                      onValueChange={(value) =>
-                                        setGenerateData({
-                                          duration: Number.parseInt(value),
-                                        })
-                                      }
-                                    >
-                                      <SelectTrigger className="h-8 text-xs">
-                                        <SelectValue />
-                                      </SelectTrigger>
-                                      <SelectContent>
-                                        {endpoint.availableDurations.map(
-                                          (dur) => (
-                                            <SelectItem
-                                              key={dur}
-                                              value={String(dur)}
-                                            >
-                                              {dur}s
-                                            </SelectItem>
-                                          ),
-                                        )}
-                                      </SelectContent>
-                                    </Select>
-                                  ) : (
-                                    <Input
-                                      className="h-8 text-xs"
-                                      type="number"
-                                      min={1}
-                                      max={30}
-                                      step={1}
-                                      value={
-                                        generateData.duration ||
-                                        endpoint?.defaultDuration ||
-                                        5
-                                      }
-                                      onChange={(e) =>
-                                        setGenerateData({
-                                          duration: Number.parseInt(
-                                            e.target.value,
-                                          ),
-                                        })
-                                      }
-                                    />
-                                  )}
-                                </div>
-                              )}
+                                    </SelectContent>
+                                  </Select>
+                                ) : (
+                                  <Input
+                                    className="h-8 text-xs"
+                                    type="number"
+                                    min={1}
+                                    max={30}
+                                    step={1}
+                                    value={
+                                      generateData.duration ||
+                                      endpoint?.defaultDuration ||
+                                      5
+                                    }
+                                    onChange={(e) =>
+                                      setGenerateData({
+                                        duration: Number.parseInt(
+                                          e.target.value,
+                                        ),
+                                      })
+                                    }
+                                  />
+                                )}
+                              </div>
+                            )}
                             {/* Show FPS only if model has fps parameters */}
                             {(endpoint?.availableFps ||
                               endpoint?.defaultFps !== undefined) && (
-                                <div className="flex flex-col gap-2">
-                                  <Label className="text-xs">FPS</Label>
-                                  {endpoint?.availableFps &&
-                                    endpoint.availableFps.length > 0 ? (
-                                    <Select
-                                      value={String(
-                                        generateData.fps ||
+                              <div className="flex flex-col gap-2">
+                                <Label className="text-xs">FPS</Label>
+                                {endpoint?.availableFps &&
+                                endpoint.availableFps.length > 0 ? (
+                                  <Select
+                                    value={String(
+                                      generateData.fps ||
                                         endpoint.defaultFps ||
                                         endpoint.availableFps[0],
-                                      )}
-                                      onValueChange={(value) =>
-                                        setGenerateData({
-                                          fps: Number.parseInt(value),
-                                        })
-                                      }
-                                    >
-                                      <SelectTrigger className="h-8 text-xs">
-                                        <SelectValue />
-                                      </SelectTrigger>
-                                      <SelectContent>
-                                        {endpoint.availableFps.map((fps) => (
-                                          <SelectItem
-                                            key={fps}
-                                            value={String(fps)}
-                                          >
-                                            {fps} FPS
-                                          </SelectItem>
-                                        ))}
-                                      </SelectContent>
-                                    </Select>
-                                  ) : (
-                                    <Input
-                                      className="h-8 text-xs"
-                                      type="number"
-                                      min={12}
-                                      max={60}
-                                      step={1}
-                                      value={
-                                        generateData.fps ||
-                                        endpoint?.defaultFps ||
-                                        24
-                                      }
-                                      onChange={(e) =>
-                                        setGenerateData({
-                                          fps: Number.parseInt(e.target.value),
-                                        })
-                                      }
-                                    />
-                                  )}
-                                </div>
-                              )}
+                                    )}
+                                    onValueChange={(value) =>
+                                      setGenerateData({
+                                        fps: Number.parseInt(value),
+                                      })
+                                    }
+                                  >
+                                    <SelectTrigger className="h-8 text-xs">
+                                      <SelectValue />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                      {endpoint.availableFps.map((fps) => (
+                                        <SelectItem
+                                          key={fps}
+                                          value={String(fps)}
+                                        >
+                                          {fps} FPS
+                                        </SelectItem>
+                                      ))}
+                                    </SelectContent>
+                                  </Select>
+                                ) : (
+                                  <Input
+                                    className="h-8 text-xs"
+                                    type="number"
+                                    min={12}
+                                    max={60}
+                                    step={1}
+                                    value={
+                                      generateData.fps ||
+                                      endpoint?.defaultFps ||
+                                      24
+                                    }
+                                    onChange={(e) =>
+                                      setGenerateData({
+                                        fps: Number.parseInt(e.target.value),
+                                      })
+                                    }
+                                  />
+                                )}
+                              </div>
+                            )}
                           </>
                         )}
                       </>
