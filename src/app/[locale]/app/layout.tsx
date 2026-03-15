@@ -1,3 +1,4 @@
+import AuthGuard from "@/components/auth-guard";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
@@ -17,5 +18,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return children;
+  return <AuthGuard>{children}</AuthGuard>;
 }

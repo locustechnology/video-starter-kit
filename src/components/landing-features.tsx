@@ -7,6 +7,7 @@ import {
   Wand2,
   Zap,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const features = [
@@ -201,9 +202,11 @@ export default function Features() {
             <div className="lg:w-1/2 w-full relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-violet-200 to-purple-100 blur-3xl opacity-50 rounded-full" />
               <div className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-xl bg-white aspect-video flex items-center justify-center p-2">
-                <img
+                <Image
                   src="/screenshot.webp"
                   alt="Editor Interface"
+                  width={1280}
+                  height={720}
                   className="rounded-xl w-full h-full object-cover shadow-sm"
                 />
               </div>

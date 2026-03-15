@@ -123,30 +123,42 @@ export default function Footer() {
               <h4 className="text-gray-900 font-medium text-[15px] mb-4 flex items-center gap-4">
                 Follow us
                 <div className="flex gap-3">
-                  <a href="/" className="text-violet-600 hover:text-violet-800">
+                  <Link
+                    href="/"
+                    className="text-violet-600 hover:text-violet-800"
+                  >
                     <Facebook
                       className="w-[18px] h-[18px]"
                       fill="currentColor"
                       strokeWidth={0}
                     />
-                  </a>
-                  <a href="/" className="text-violet-600 hover:text-violet-800">
+                  </Link>
+                  <Link
+                    href="/"
+                    className="text-violet-600 hover:text-violet-800"
+                  >
                     <Instagram className="w-[18px] h-[18px]" />
-                  </a>
-                  <a href="/" className="text-violet-600 hover:text-violet-800">
+                  </Link>
+                  <Link
+                    href="/"
+                    className="text-violet-600 hover:text-violet-800"
+                  >
                     <Twitter
                       className="w-[18px] h-[18px]"
                       fill="currentColor"
                       strokeWidth={0}
                     />
-                  </a>
-                  <a href="/" className="text-violet-600 hover:text-violet-800">
+                  </Link>
+                  <Link
+                    href="/"
+                    className="text-violet-600 hover:text-violet-800"
+                  >
                     <Linkedin
                       className="w-[18px] h-[18px]"
                       fill="currentColor"
                       strokeWidth={0}
                     />
-                  </a>
+                  </Link>
                 </div>
               </h4>
             </div>
@@ -225,7 +237,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <a
+            <Link
               href="/"
               className="w-full relative overflow-hidden group rounded-xl bg-gradient-to-r from-violet-500 to-cyan-400 p-px shadow-md"
             >
@@ -242,7 +254,7 @@ export default function Footer() {
                   <ArrowRight className="w-4 h-4 text-cyan-500" />
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
 
