@@ -4,22 +4,24 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-// ─── Environment credentials ───────────────────────────────────
-const VALID_EMAIL = process.env.NEXT_PUBLIC_LOGIN_USERNAME || "gostudio";
-const VALID_PASSWORD =
-  process.env.NEXT_PUBLIC_LOGIN_PASSWORD || "gostudio@12345";
-// ─────────────────────────────────────────────────────────────
-
 export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
   const [requestingAccess, setRequestingAccess] = useState(false);
   const [requestSuccess, setRequestSuccess] = useState(false);
 
   useEffect(() => {
+    // If the user is already authenticated, redirect them to the app
+    // so they are not logged out if they visit the outside page
+    if (localStorage.getItem("gostudio_auth") === "true") {
+      router.replace("/en/app");
+      return;
+    }
+
     // If the email is passed from GoStudio, auto-fill it
     const searchParams = new URLSearchParams(window.location.search);
     const emailParam = searchParams.get("email");
@@ -27,30 +29,35 @@ export default function LoginPage() {
       setEmail(emailParam);
     }
 
-    // If the user is already authenticated, redirect them to the app
-    // so they are not logged out if they visit the outside page
-    if (localStorage.getItem("gostudio_auth") === "true") {
-      router.replace("/en/app");
-    }
+    setIsCheckingAuth(false);
   }, [router]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     setLoading(true);
 
-    // Simulate a small delay for UX
-    setTimeout(() => {
-      if (email === VALID_EMAIL && password === VALID_PASSWORD) {
-        // Store auth state
+    try {
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
         localStorage.setItem("gostudio_auth", "true");
         localStorage.setItem("gostudio_user", email);
         router.push("/en/app");
       } else {
-        setError("Invalid email or password. Please try again.");
+        setError(data.error || "Invalid email or password. Please try again.");
         setLoading(false);
       }
-    }, 600);
+    } catch {
+      setError("Something went wrong. Please try again.");
+      setLoading(false);
+    }
   };
 
   const handleRequestAccess = async (e: React.MouseEvent) => {
@@ -83,6 +90,11 @@ export default function LoginPage() {
       setRequestingAccess(false);
     }
   };
+
+  // Show blank screen while checking auth — prevents flash of login form
+  if (isCheckingAuth) {
+    return <div style={{ minHeight: "100vh", background: "#ffffff" }} />;
+  }
 
   return (
     <div className="login-page">
